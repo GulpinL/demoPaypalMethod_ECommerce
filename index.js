@@ -42,10 +42,10 @@ paypal.configure({
   });
 
 app.get("/", (req, res) => {
-    res.send('hello gulpinl')
-    // res.render("home", {
-    //   paypalClientId: process.env.PAYPAL_CLIENT_ID,
-    // })
+    // res.send('hello gulpinl')
+    res.render("home", {
+      paypalClientId: process.env.PAYPAL_CLIENT_ID,
+    })
   })
 
 // app.post('/pay', (req, res) => {
