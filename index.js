@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 3005
 
 require("dotenv").config()
 var path=require('path');
@@ -59,8 +59,8 @@ app.post('/pay',function(req,res){
           "payment_method": "paypal"
       },
       "redirect_urls": {
-          "return_url": "http://localhost:3000/success",
-          "cancel_url": "http://localhost:3000/cancel"
+          "return_url": "http://localhost:3005/success",
+          "cancel_url": "http://localhost:3005/cancel"
       },
       "transactions": [{
           "item_list": {
@@ -115,6 +115,6 @@ app.get('/success', (req, res) => {
 
 app.get('/cancel', (req, res) => res.send('Cancelled'));
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 3005, () => {
   console.log(`Example app listening on port ${port}`)
 })
